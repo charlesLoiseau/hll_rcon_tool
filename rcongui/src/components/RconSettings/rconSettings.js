@@ -1,27 +1,18 @@
 import React from "react";
-import { range } from "lodash/util";
+import {Button, Grid, IconButton, Link, TextField, Typography,} from "@material-ui/core";
 import {
-  Grid,
-  Typography,
-  Button,
-  TextField,
-  Link,
-  IconButton,
-} from "@material-ui/core";
-import {
-  showResponse,
-  postData,
-  get,
-  handle_http_errors,
-  addPlayerToWatchList,
+    addPlayerToWatchList,
+    get,
+    getSharedMessages,
+    handle_http_errors,
+    postData,
+    showResponse,
 } from "../../utils/fetchUtils";
 import Blacklist from "./blacklist";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 import _ from "lodash";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import Padlock from "../../components/SettingsView/padlock";
-import WarningIcon from "@material-ui/icons/Warning";
-import TextHistoryManager, { SelectNameSpace } from "./textHistoryManager";
+import TextHistoryManager, {SelectNameSpace} from "./textHistoryManager";
 import TextHistory from "../textHistory";
 import ServicesList from "../Services";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -29,12 +20,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import { ForwardCheckBox, WordList } from "../commonComponent";
+import {ManualPlayerInput, WordList} from "../commonComponent";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AddIcon from "@material-ui/icons/Add";
 import SaveIcon from "@material-ui/icons/Save";
-import { ManualPlayerInput } from "../commonComponent";
-import { getSharedMessages } from "../../utils/fetchUtils";
 
 const ManualWatchList = ({ classes }) => {
   const [name, setName] = React.useState("");
@@ -144,8 +133,15 @@ const WebhooksConfig = () => {
       hooks: hookConfig.hooks,
     })
       .then((res) => showResponse(res, `set_hooks ${hookConfig.name}`, true))
-      .then((res) => setHooks(res.result));
+      .then((res) => {console.log(res);setHooks(res.result); });
 
+    if (hooks === null) {
+        return (
+            <React.Fragment>
+                <p>no hooks found</p>
+            </React.Fragment>
+        )
+    }
   return (
     <React.Fragment>
       {hooks.map((hookConfig) => (

@@ -1,7 +1,24 @@
-import { AppBar, Link, Avatar, Grid, List, ListItem, ListItemSecondaryAction, ListItemAvatar, ListItemText, Toolbar, Typography, makeStyles, Paper, Divider, Card, CardContent, CardMedia, LinearProgress, Select, FormControl, InputLabel, MenuItem, IconButton, Chip } from '@material-ui/core'
+import {
+    AppBar,
+    Avatar,
+    Divider,
+    Grid,
+    IconButton,
+    LinearProgress,
+    Link,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemSecondaryAction,
+    ListItemText,
+    makeStyles,
+    Paper,
+    Toolbar,
+    Typography
+} from '@material-ui/core'
 import React from 'react'
-import { get, handle_http_errors, showResponse } from '../../utils/fetchUtils'
-import { List as iList, Map, fromJS, set } from 'immutable'
+import {get, handle_http_errors, showResponse} from '../../utils/fetchUtils'
+import {fromJS, List as iList, Map} from 'immutable'
 import moment from 'moment'
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';

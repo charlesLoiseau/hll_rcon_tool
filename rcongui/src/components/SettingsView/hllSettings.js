@@ -300,7 +300,6 @@ class HLLSettings extends React.Component {
       forwardVIP,
       forwardBroadcast,
       forwardWelcome,
-      forwardRotation,
       sildersShowValues,
       votekickEnabled,
       votekickThreshold,
