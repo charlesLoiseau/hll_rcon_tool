@@ -531,11 +531,10 @@ class RconSettings extends React.Component {
         <Grid
           item
           xs={12}
-          className={`${classes.padding} ${classes.margin}`}
+          className={`${classes.padding} ${classes.margin} ${classes.root}`}
           alignContent="center"
           justify="center"
           alignItems="center"
-          className={classes.root}
         >
           <WebhooksConfig classes={classes} />
         </Grid>
@@ -595,7 +594,7 @@ class RconSettings extends React.Component {
               handleChange={(v) =>
                 this.saveAutoVotekickConfig({ is_enabled: v })
               }
-            ></Padlock>
+            />
           </Grid>
         </Grid>
 
@@ -604,11 +603,10 @@ class RconSettings extends React.Component {
         </Grid>
         <Grid
           container
-          className={`${classes.padding} ${classes.margin}`}
+          className={`${classes.padding} ${classes.margin} ${classes.root}`}
           alignContent="center"
           justify="center"
           alignItems="center"
-          className={classes.root}
         >
           <Padlock
             label="broadcast"
@@ -627,11 +625,10 @@ class RconSettings extends React.Component {
         <Grid
           item
           xs={12}
-          className={`${classes.padding} ${classes.margin}`}
+          className={`${classes.padding} ${classes.margin} ${classes.root}`}
           alignContent="center"
           justify="center"
           alignItems="center"
-          className={classes.root}
         >
           <Grid container justify="space-evenly">
             <Grid item>
@@ -654,11 +651,10 @@ class RconSettings extends React.Component {
         <Grid
           item
           xs={12}
-          className={`${classes.padding} ${classes.margin}`}
+          className={`${classes.padding} ${classes.margin} ${classes.root}`}
           alignContent="center"
           justify="center"
           alignItems="center"
-          className={classes.root}
         >
           <Button
             color="secondary"

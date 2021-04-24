@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import React from "react";
 import {
   addPlayerToWatchList,
@@ -542,7 +541,6 @@ class PlayersHistory extends React.Component {
             onAddVip={this.onAddVip}
             onDeleteVip={this.onDeleteVip}
             onAddToWatchList={this.onAddToWatchList}
-            onRemoveFromWatchList={this.onRemoveFromWatchList}
           />
         </Grid>
         <Grid item xs={12} className={classes.padding}>
