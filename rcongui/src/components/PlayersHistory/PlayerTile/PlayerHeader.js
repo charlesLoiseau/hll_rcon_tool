@@ -10,7 +10,6 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import {pure} from "recompose";
 import {getName} from "country-list";
-import {useHistory} from "react-router";
 
 const getCountry = (country) => {
   if (country === "" || country === null) {
@@ -27,7 +26,6 @@ const getCountry = (country) => {
 };
 
 export const PlayerHeader = pure(({ classes, player }) => {
-    const history = useHistory();
   const [showAll, setShowAll] = React.useState(false);
   const hasMultipleName = player.get("names") && player.get("names").size > 1;
 
@@ -37,7 +35,7 @@ export const PlayerHeader = pure(({ classes, player }) => {
   const namesByMatch = player.get("names_by_match", null) ? player.get("names_by_match") : new List()
   const steamProfile = player.get('steaminfo') ? player.get("steaminfo").get("profile") : new Map()
   const avatarUrl = steamProfile ? steamProfile.get("avatar", null) : null
-  const country = player.get('steaminfo') ? player.get('steaminfo') .get("country", "") : ""
+  const country = player.get('steaminfo') ? player.get('steaminfo').get("country", "") : ""
 
   return (
     <ListItem alignItems="flex-start">
